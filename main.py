@@ -6,8 +6,8 @@ from openslide import open_slide
 import pickle
 import os
 
-target_slname = './data/target/N14-02_02.svs'
-sl_name = './data/ee_pak/16_002.svs'
+target_slname = '../../research/data/target/N14-02_02.svs'
+sl_name = '../../research/data/ee_pak/16_002.svs'
 
 target_slide = open_slide(target_slname)
 slide = open_slide(sl_name)
@@ -18,13 +18,15 @@ patch_size = 1000
 target = target_slide.read_region((x//2, y//2), 0, (patch_size, patch_size))
 
 # patch_dict = create_patches('./C06-27_01.svs', patch_size, 0)
-isFile = os.path.isfile('patch.pkl')
+# save patches as pickle files to test without creating patches everytime
+pkl_name = sl_name.split('/')[-1].split('.')[0] + '.pkl'
+isFile = os.path.isfile(pkl_name)
 print(isFile)
 if (isFile):
-    patch_dict = pickle.load(open('patch.pkl', 'rb'))
+    patch_dict = pickle.load(open(pkl_name, 'rb'))
 else:
     patch_dict = create_patches(sl_name, patch_size, 0)
-    with open('patch.pkl', 'wb') as f:
+    with open(pkl_name, 'wb') as f:
         pickle.dump(patch_dict, f)
 
 transferlist = staintransfer(target, patch_dict)
