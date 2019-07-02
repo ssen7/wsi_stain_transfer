@@ -9,8 +9,8 @@ import os
 # run this file to convert all SVS images in a folder to stain normalized images.
 
 patch_size = 1000
-directory = '../../research/data/ee_pak'
-save_dir = '../../research/converted/'
+directory = '../../research/data/ee_pak'  # directory containing SVS images
+save_dir = '../../research/converted/'  # directory to save normalized image
 
 
 def absoluteFilePaths(directory):

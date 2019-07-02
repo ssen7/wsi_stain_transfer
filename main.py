@@ -6,9 +6,11 @@ from openslide import open_slide
 import pickle
 import os
 
-target_slname = '../../research/data/target/N14-02_02.svs'
-sl_name = '../../research/data/ee_pak/16_002.svs'
-save_dir = '../../research/converted/'
+target_slname = '../../research/data/target/N14-02_02.svs'  # target slide file
+sl_name = '../../research/data/ee_pak/16_002.svs'  # File to transfer stain to
+save_dir = '../../research/converted/'  # directory to save normalized image
+
+### DO NOT CHANGE ANYTHING BEYOND THIS POINT###
 
 target_slide = open_slide(target_slname)
 slide = open_slide(sl_name)
@@ -18,7 +20,6 @@ x, y = target_slide.dimensions
 patch_size = 1000
 target = target_slide.read_region((x//2, y//2), 0, (patch_size, patch_size))
 
-# patch_dict = create_patches('./C06-27_01.svs', patch_size, 0)
 # save patches as pickle files to test without creating patches everytime
 pkl_name = sl_name.split('/')[-1].split('.')[0] + '.pkl'
 isFile = os.path.isfile(pkl_name)
