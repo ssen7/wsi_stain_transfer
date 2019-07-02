@@ -3,6 +3,7 @@
 Run main_all.py to transfer target stain to all SVS images in one directory.
 
 Run main.py to transfer stain to one SVS image.
+
 Sample run:
 ```
 /home/saurav/anaconda3/bin/python /mnt/c/Users/Saurav/Documents/MSDS/git/wsi_stain_transfer/main.py
