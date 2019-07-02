@@ -1,5 +1,7 @@
 # wsi_stain_transfer
 
+Install staintools from here: https://github.com/Peter554/StainTools/
+
 Change and Run main_all.py to transfer target stain to all SVS images in one directory.
 
 Change and Run main.py to transfer stain to one SVS image.
