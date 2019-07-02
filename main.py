@@ -8,6 +8,7 @@ import os
 
 target_slname = '../../research/data/target/N14-02_02.svs'
 sl_name = '../../research/data/ee_pak/16_002.svs'
+save_dir = '../../research/converted/'
 
 target_slide = open_slide(target_slname)
 slide = open_slide(sl_name)
@@ -35,4 +36,4 @@ new_dict = {key: value for (key, value) in zip(
     patch_dict.keys(), transferlist)}
 
 # print(new_dict)
-reconstruct(slide,  new_dict)
+reconstruct(slide,  new_dict, save_dir)
