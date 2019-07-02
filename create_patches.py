@@ -79,7 +79,6 @@ def create_patches(img_path, patch_size, overlap):
 
         # if less than patch size left, get the rest of the image, regardless of the overlap
         elif (img_y_left > 0 and img_y_left < step_size):
-            print('less than step size')
 
             img_y_left = img_y_left - step_size
             # y = ylim - patch_size

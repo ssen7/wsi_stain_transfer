@@ -22,7 +22,7 @@ target = target_slide.read_region((x//2, y//2), 0, (patch_size, patch_size))
 # save patches as pickle files to test without creating patches everytime
 pkl_name = sl_name.split('/')[-1].split('.')[0] + '.pkl'
 isFile = os.path.isfile(pkl_name)
-print(isFile)
+print('Is pickle file for patches present: {}'.format(isFile))
 if (isFile):
     patch_dict = pickle.load(open(pkl_name, 'rb'))
 else:
