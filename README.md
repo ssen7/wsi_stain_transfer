@@ -1,4 +1,5 @@
 # wsi_stain_transfer
+This script takes Whole Slide Image (WSI), in the form of SVS/NDPI image, uses Vahadane stain transfer and reconstitutes the WSI.
 
 Install staintools from here: https://github.com/Peter554/StainTools/
 
